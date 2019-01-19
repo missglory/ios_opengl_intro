@@ -13,6 +13,11 @@
 
 @end
 
+static float re = 0.;
+static float gr = 0.2;
+static float bl = 0.3;
+static float dr = .01;
+
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -22,7 +27,12 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 -(void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
-    glClearColor(0., .1, .3, 1.);
+    glClearColor(re, gr, bl, 1.);
+    if (re > .48)
+        dr = -(fabsf(dr));
+    if (re < .02)
+        dr = fabsf(dr);
+    re += dr;
     glClear(GL_COLOR_BUFFER_BIT);
 }
 
