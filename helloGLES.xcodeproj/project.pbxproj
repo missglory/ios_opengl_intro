@@ -294,6 +294,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dmi.helloGLES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				"WARNING_LDFLAGS[arch=*]" = GLES_SILENCE_DEPRECATION;
 			};
 			name = Debug;
 		};
